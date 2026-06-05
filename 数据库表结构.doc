@@ -1,0 +1,1578 @@
+
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<!--<html>-->
+<h3>&nbsp;
+    创建外键索引语句:
+</h3>
+
+<pre style="padding: 20px; display: block; background: #d5d5d5;font-size: 12px">
+;
+ALTER TABLE pinglunhuifu ADD FOREIGN KEY (pinglunid) REFERENCES pinglun(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE xinwengonggao ADD FOREIGN KEY (fenlei) REFERENCES xinwenfenlei(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE qiuyuanxinxi ADD FOREIGN KEY (suoshuqiudui) REFERENCES qiudui(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE bisaixinxi ADD FOREIGN KEY (bisaileixing) REFERENCES bisaileixing(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE bisaibaoming ADD FOREIGN KEY (bisaixinxiid) REFERENCES bisaixinxi(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE bisaibaoming ADD FOREIGN KEY (bisaileixing) REFERENCES bisaileixing(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE bisaibaoming ADD FOREIGN KEY (baomingqiudui) REFERENCES qiudui(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE saichengbiao ADD FOREIGN KEY (bisaixinxiid) REFERENCES bisaixinxi(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE saichengbiao ADD FOREIGN KEY (bisaileixing) REFERENCES bisaileixing(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE saichengbiao ADD FOREIGN KEY (qiuduia) REFERENCES qiudui(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE saichengbiao ADD FOREIGN KEY (qiuduib) REFERENCES qiudui(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE bisaiwancheng ADD FOREIGN KEY (saichengbiaoid) REFERENCES saichengbiao(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE bisaiwancheng ADD FOREIGN KEY (bisaileixing) REFERENCES bisaileixing(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE bisaiwancheng ADD FOREIGN KEY (qiuduia) REFERENCES qiudui(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE bisaiwancheng ADD FOREIGN KEY (qiuduib) REFERENCES qiudui(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE bisaiwancheng ADD FOREIGN KEY (shengliqiudui) REFERENCES qiudui(id) ON UPDATE CASCADE ON DELETE CASCADE</pre>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【管理员】模块,表名：<span style="color: #990000">admins</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>username</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>帐号 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>pwd</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>密码 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【观众】模块,表名：<span style="color: #990000">guanzhong</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>yonghuming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>用户名 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>mima</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>密码 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>xingming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>姓名 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>xingbie</td>
+        <td>varchar</td>
+        <td>10</td>
+        <td></td>
+        <td>性别 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>shouji</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>手机 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>youxiang</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>邮箱 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>touxiang</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>头像 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>issh</td>
+        <td>varchar</td>
+        <td>10</td>
+        <td></td>
+        <td>是否审核 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【友情链接】模块,表名：<span style="color: #990000">youqinglianjie</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>wangzhanmingcheng</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>网站名称 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>wangzhi</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>网址 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【轮播图】模块,表名：<span style="color: #990000">lunbotu</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>title</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>标题 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>image</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图片 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>url</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>连接地址 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【评论】模块,表名：<span style="color: #990000">pinglun</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>biao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>表 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>biaoid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>表id </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>biaoti</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>标题 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>pingfen</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>评分 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>pinglunneirong</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>评论内容 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>xingming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>姓名 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>touxiang</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>头像 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>pinglunren</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>评论人 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>addtime</td>
+        <td>timestamp </td>
+        <td></td>
+        <td></td>
+        <td>评论时间 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【评论回复】模块,表名：<span style="color: #990000">pinglunhuifu</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>pinglunid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>评论id </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>biao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>表 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>biaoid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>表id </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>biaoti</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>标题 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>pinglunneirong</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>评论内容 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>pinglunren</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>评论人 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>huifuneirong</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>回复内容 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>huifuren</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>回复人 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>addtime</td>
+        <td>timestamp </td>
+        <td></td>
+        <td></td>
+        <td>回复时间 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：pinglunid ，
+                关联表【pinglun】中字段id            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【点赞】模块,表名：<span style="color: #990000">dianzan</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>username</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>用户 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>biaoid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>关联表id </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>biao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>关联表 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>biaoti</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>标题 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>addtime</td>
+        <td>timestamp </td>
+        <td></td>
+        <td></td>
+        <td>点赞时间 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【教练】模块,表名：<span style="color: #990000">jiaolian</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>gonghao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>工号 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>mima</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>密码 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>zhicheng</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>职称 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>xingming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>姓名 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>xingbie</td>
+        <td>varchar</td>
+        <td>10</td>
+        <td></td>
+        <td>性别 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>zizhizhengshu</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>资质证书 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>zhijiaojingyan</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>执教经验 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>lianxidianhua</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>联系电话 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>touxiang</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>头像 </td>
+    </tr>
+        <tr>
+        <td>11</td>
+        <td>issh</td>
+        <td>varchar</td>
+        <td>10</td>
+        <td></td>
+        <td>是否审核 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【新闻分类】模块,表名：<span style="color: #990000">xinwenfenlei</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>fenleimingcheng</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>分类名称 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【新闻公告】模块,表名：<span style="color: #990000">xinwengonggao</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>biaoti</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>标题 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>fenlei</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>分类 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>tupian</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图片 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>tianjiaren</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>添加人 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>dianjiliang</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>点击量 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>neirong</td>
+        <td>longtext</td>
+        <td></td>
+        <td></td>
+        <td>内容 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：fenlei ，
+                关联表【xinwenfenlei】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【球员信息】模块,表名：<span style="color: #990000">qiuyuanxinxi</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>zhanghao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>账号 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>mima</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>密码 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>xingming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>姓名 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>xingbie</td>
+        <td>varchar</td>
+        <td>10</td>
+        <td></td>
+        <td>性别 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>lianxidianhua</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>联系电话 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>nianling</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>年龄 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>shengao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>身高 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>tizhong</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>体重 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>suoshuqiudui</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>所属球队 </td>
+    </tr>
+        <tr>
+        <td>11</td>
+        <td>qiuyuanweizhi</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>球员位置 </td>
+    </tr>
+        <tr>
+        <td>12</td>
+        <td>qiuyihao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>球衣号 </td>
+    </tr>
+        <tr>
+        <td>13</td>
+        <td>gerenjianjie</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>个人简介 </td>
+    </tr>
+        <tr>
+        <td>14</td>
+        <td>touxiang</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>头像 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：suoshuqiudui ，
+                关联表【qiudui】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【球队】模块,表名：<span style="color: #990000">qiudui</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>qiuduibianhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>球队编号 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>qiuduimingcheng</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>球队名称 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>qiuduitupian</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>球队图片 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>qiuduiduiyuan</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>球队队员 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>shilidengji</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>实力等级 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>qiuduijifen</td>
+        <td>decimal(10, 2)</td>
+        <td></td>
+        <td></td>
+        <td>球队积分 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>qiuduixiangqing</td>
+        <td>longtext</td>
+        <td></td>
+        <td></td>
+        <td>球队详情 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>jiaolianxingming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>教练姓名 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>qiuduijiaolian</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>球队教练 </td>
+    </tr>
+        <tr>
+        <td>11</td>
+        <td>chenglishijian</td>
+        <td>varchar</td>
+        <td>25</td>
+        <td></td>
+        <td>成立时间 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【比赛类型】模块,表名：<span style="color: #990000">bisaileixing</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>leixingmingcheng</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>类型名称 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【比赛信息】模块,表名：<span style="color: #990000">bisaixinxi</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>bisaibianhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>比赛编号 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>bisaibiaoti</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>比赛标题 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>bisaileixing</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>比赛类型 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>bisaimoshi</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>比赛模式 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>bisaitupian</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>比赛图片 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>canjiaqiudui</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>参加球队 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>bisaichangdi</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>比赛场地 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>bisaineirong</td>
+        <td>longtext</td>
+        <td></td>
+        <td></td>
+        <td>比赛内容 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>tianjiaren</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>添加人 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：bisaileixing ，
+                关联表【bisaileixing】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【比赛报名】模块,表名：<span style="color: #990000">bisaibaoming</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>bisaixinxiid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>比赛信息id </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>bisaibianhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>比赛编号 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>bisaibiaoti</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>比赛标题 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>bisaileixing</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>比赛类型 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>baomingbianhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>报名编号 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>baomingqiudui</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>报名球队ID </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>qiuduibianhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>球队编号 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>qiuduimingcheng</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>球队名称 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>qiuduiduiyuan</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>球队队员 </td>
+    </tr>
+        <tr>
+        <td>11</td>
+        <td>jiaolianxingming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>教练姓名 </td>
+    </tr>
+        <tr>
+        <td>12</td>
+        <td>qiuduijiaolian</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>球队教练 </td>
+    </tr>
+        <tr>
+        <td>13</td>
+        <td>lianxifangshi</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>联系方式 </td>
+    </tr>
+        <tr>
+        <td>14</td>
+        <td>beizhu</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>备注 </td>
+    </tr>
+        <tr>
+        <td>15</td>
+        <td>zhuangtai</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>状态 </td>
+    </tr>
+        <tr>
+        <td>16</td>
+        <td>addtime</td>
+        <td>timestamp </td>
+        <td></td>
+        <td></td>
+        <td>添加时间 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：bisaixinxiid ，
+                关联表【bisaixinxi】中字段id            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：bisaileixing ，
+                关联表【bisaileixing】中的id 字段            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：baomingqiudui ，
+                关联表【qiudui】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【赛程表】模块,表名：<span style="color: #990000">saichengbiao</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>bisaixinxiid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>比赛信息id </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>bisaibianhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>比赛编号 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>bisaibiaoti</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>比赛标题 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>bisaileixing</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>比赛类型 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>qiuduia</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>球队A </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>vs</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>VS </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>qiuduib</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>球队B </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>bifen</td>
+        <td>decimal(10, 2)</td>
+        <td></td>
+        <td></td>
+        <td>比分 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>zhuangtai</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>状态 </td>
+    </tr>
+        <tr>
+        <td>11</td>
+        <td>bisaineirong</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>比赛内容 </td>
+    </tr>
+        <tr>
+        <td>12</td>
+        <td>addtime</td>
+        <td>timestamp </td>
+        <td></td>
+        <td></td>
+        <td>添加时间 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：bisaixinxiid ，
+                关联表【bisaixinxi】中字段id            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：bisaileixing ，
+                关联表【bisaileixing】中的id 字段            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：qiuduia ，
+                关联表【qiudui】中的id 字段            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：qiuduib ，
+                关联表【qiudui】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【比赛完成】模块,表名：<span style="color: #990000">bisaiwancheng</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>saichengbiaoid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>赛程表id </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>bisaibianhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>比赛编号 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>bisaibiaoti</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>比赛标题 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>bisaileixing</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>比赛类型 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>qiuduia</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>球队A </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>qiuduib</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>球队B </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>wanchengbianhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>完成编号 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>shengliqiudui</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>胜利球队 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>wanchengneirong</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>完成内容 </td>
+    </tr>
+        <tr>
+        <td>11</td>
+        <td>addtime</td>
+        <td>timestamp </td>
+        <td></td>
+        <td></td>
+        <td>添加时间 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：saichengbiaoid ，
+                关联表【saichengbiao】中字段id            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：bisaileixing ，
+                关联表【bisaileixing】中的id 字段            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：qiuduia ，
+                关联表【qiudui】中的id 字段            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：qiuduib ，
+                关联表【qiudui】中的id 字段            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：shengliqiudui ，
+                关联表【qiudui】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+
+
+</html>
