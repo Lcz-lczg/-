@@ -1,0 +1,11 @@
+[      45ms] [ERROR] TypeError: Cannot assign to read only property '_' of object '#<Object>'
+    at assign (<anonymous>)
+    at http://127.0.0.1:3000/assets/index-DXx_FQ1i.js:20:23978
+    at W (http://127.0.0.1:3000/assets/index-DXx_FQ1i.js:20:24120)
+    at wt.l [as fn] (http://127.0.0.1:3000/assets/index-DXx_FQ1i.js:20:22305)
+    at wt.run (http://127.0.0.1:3000/assets/index-DXx_FQ1i.js:18:1469)
+    at e.update (http://127.0.0.1:3000/assets/index-DXx_FQ1i.js:20:23155)
+    at H (http://127.0.0.1:3000/assets/index-DXx_FQ1i.js:20:22051)
+    at V (http://127.0.0.1:3000/assets/index-DXx_FQ1i.js:20:19213)
+    at b (http://127.0.0.1:3000/assets/index-DXx_FQ1i.js:20:16038)
+    at Y (http://127.0.0.1:3000/assets/index-DXx_FQ1i.js:20:24829) @ http://127.0.0.1:3000/assets/index-DXx_FQ1i.js:17

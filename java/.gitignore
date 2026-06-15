@@ -1,0 +1,14 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# JWT 密钥文件（自动生成，每台机器不同）
+.jwtkey
+JwtTokenUtils.txt
+
+# IDE
+.idea/
+*.iml
+*.class
+
+# Logs
+*.log
